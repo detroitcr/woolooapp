@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:internapp/screens/home_screen.dart';
+import 'package:internapp/widgets/custom_bottom_navigationbar.dart';
 import 'package:internapp/widgets/otp_input_widget.dart';
+import 'package:internapp/widgets/size_config.dart';
+
+import '../utils/custom_color.dart';
 
 class OTPSCREEN extends StatefulWidget {
   const OTPSCREEN({Key? key}) : super(key: key);
@@ -19,6 +24,7 @@ class _OTPSCREENState extends State<OTPSCREEN> {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -56,6 +62,34 @@ class _OTPSCREENState extends State<OTPSCREEN> {
           Text(
             _otp ?? 'Please Enter OTP',
             style: TextStyle(fontSize: 20),
+          ),
+          Divider(),
+          InkWell(
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return CustomBottomNavigationBar();
+              }));
+            },
+            child: Container(
+              child: Text(
+                'Submit',
+                style: TextStyle(color: Colors.white),
+              ),
+              width: double.infinity,
+              padding: EdgeInsets.symmetric(vertical: 12),
+              alignment: Alignment.center,
+              decoration: ShapeDecoration(
+                color: activeColor,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(
+                    14,
+                  ),
+                ),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: SizeConfig.deviceHeight * 0.016,
           ),
         ],
       ),

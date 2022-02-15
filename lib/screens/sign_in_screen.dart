@@ -86,10 +86,6 @@ class _LoginScreenState extends State<LoginScreen> {
               SizedBox(
                 height: SizeConfig.deviceHeight * 0.016,
               ),
-
-              SizedBox(
-                height: SizeConfig.deviceHeight * 0.016,
-              ),
             ],
           ),
         ),

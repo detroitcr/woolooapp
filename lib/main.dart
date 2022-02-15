@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:internapp/screens/fields_screen.dart';
+import 'package:internapp/screens/onboarding_screen.dart';
 import 'package:internapp/screens/sign_in_screen.dart';
 import 'package:internapp/screens/splash_screen.dart';
 import 'package:internapp/widgets/custom_bottom_navigationbar.dart';
@@ -11,8 +13,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Material App',
       debugShowCheckedModeBanner: false,
+      home: OnBoardingScreen(),
       // home: SplashScreen(),
-      home: LoginScreen(),
+      // home: FieldScreen(),
+     // home: LoginScreen(),
     );
   }
 }
