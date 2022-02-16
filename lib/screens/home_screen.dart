@@ -79,9 +79,33 @@ class _AppHomeScreenState extends State<AppHomeScreen> {
                 height: SizeConfig.deviceHeight * 0.010,
               ),
               Stack(
+                alignment: Alignment.bottomRight,
                 children: [
-                  Container(),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      InkWell(
+                        onTap: () {
+                          print('qr code');
+                        },
+                        child: Container(
+                          height: SizeConfig.deviceHeight * 0.20,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(10),
+                            child: Image.asset(
+                              'assets/images/qrcode.jpg',
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ],
+              ),
+              MyText(
+                text: 'Container Text',
+                size: 24,
               ),
               GestureDetector(
                 onTap: () {
