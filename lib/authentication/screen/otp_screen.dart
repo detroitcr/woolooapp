@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:internapp/screens/home_screen.dart';
 import 'package:internapp/widgets/custom_bottom_navigationbar.dart';
-import 'package:internapp/widgets/otp_input_widget.dart';
+import 'package:internapp/authentication/widget/otp_input_widget.dart';
 import 'package:internapp/widgets/size_config.dart';
 
-import '../utils/custom_color.dart';
+import '../../utils/custom_color.dart';
 
 class OTPSCREEN extends StatefulWidget {
   const OTPSCREEN({Key? key}) : super(key: key);

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:internapp/screens/home_screen.dart';
+import 'package:internapp/screens/map_screen.dart';
 import 'package:internapp/screens/menu_screen.dart';
 import 'package:internapp/screens/myaccount_screen.dart';
 import 'package:internapp/screens/refer_screen.dart';
@@ -37,7 +38,40 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
         backgroundColor: Colors.white,
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.add),
-          onPressed: () {},
+          onPressed: () {
+            showModalBottomSheet(
+              context: context,
+              builder: (BuildContext context) {
+                return Container(
+                  width: 50,
+                  height: 200,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      IconButton(
+                        
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              (MaterialPageRoute(builder: (context) {
+                                return MapScreen();
+                              })));
+                        },
+                        icon: Icon(Icons.map),
+                      ),
+                      SizedBox(
+                        width: 100,
+                      ),
+                      IconButton(
+                        onPressed: () {},
+                        icon: Icon(Icons.star),
+                      ),
+                    ],
+                  ),
+                );
+              },
+            );
+          },
           backgroundColor: Colors.blue,
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
@@ -165,7 +199,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
                           ),
                         ],
                       ),
-                    )
+                    ),
                   ],
                 )
               ],

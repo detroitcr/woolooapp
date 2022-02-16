@@ -20,6 +20,7 @@ class _AppHomeScreenState extends State<AppHomeScreen> {
     SizeConfig().init(context);
     return SafeArea(
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0,
@@ -76,6 +77,11 @@ class _AppHomeScreenState extends State<AppHomeScreen> {
               ),
               SizedBox(
                 height: SizeConfig.deviceHeight * 0.010,
+              ),
+              Stack(
+                children: [
+                  Container(),
+                ],
               ),
               GestureDetector(
                 onTap: () {

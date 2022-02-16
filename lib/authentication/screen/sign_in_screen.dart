@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:internapp/screens/otp_screen.dart';
+import 'package:internapp/authentication/screen/otp_screen.dart';
 import 'package:internapp/utils/custom_color.dart';
 import 'package:internapp/widgets/custom_text_field.dart';
 import 'package:internapp/widgets/size_config.dart';
