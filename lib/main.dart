@@ -15,12 +15,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Material App',
       debugShowCheckedModeBanner: false,
-       home: AppHomeScreen(),
+      // home: AppHomeScreen(),
      // home: MapScreen(),
-      //  home: OnBoardingScreen(),
+      // home: OnBoardingScreen(),
       // home: SplashScreen(),
       // home: FieldScreen(),
-      // home: LoginScreen(),
+      home: CustomBottomNavigationBar(),
+     
     );
   }
 }

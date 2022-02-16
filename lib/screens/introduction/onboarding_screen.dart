@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:internapp/authentication/screen/sign_in_screen.dart';
 import 'package:internapp/models/onboard_model.dart';
 import 'package:internapp/utils/custom_color.dart';
 import 'package:internapp/widgets/custom_bottom_navigationbar.dart';
@@ -48,7 +49,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => CustomBottomNavigationBar()));
+                        builder: (context) => LoginScreen()));
               },
               child: Text(
                 "Skip",
@@ -130,7 +131,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                             context,
                             MaterialPageRoute(
                                 builder: (context) =>
-                                    CustomBottomNavigationBar()));
+                                    LoginScreen()));
                       }
 
                       _pageController.nextPage(

@@ -14,6 +14,7 @@ class CustomBottomNavigationBar extends StatefulWidget {
 }
 
 class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
+  
   int currentTab = 0;
   final List<Widget> screens = [
     AppHomeScreen(),
@@ -43,28 +44,55 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
               context: context,
               builder: (BuildContext context) {
                 return Container(
-                  width: 50,
                   height: 200,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                  child: Wrap(
                     children: [
-                      IconButton(
-                        
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              (MaterialPageRoute(builder: (context) {
-                                return MapScreen();
-                              })));
-                        },
-                        icon: Icon(Icons.map),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width * .5,
+                        child: IconButton(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                (MaterialPageRoute(builder: (context) {
+                                  return MapScreen();
+                                })));
+                          },
+                          icon: Icon(Icons.map),
+                        ),
                       ),
                       SizedBox(
-                        width: 100,
+                        width: MediaQuery.of(context).size.width * .5,
+                        child: IconButton(
+                          onPressed: () {},
+                          icon: Icon(Icons.star),
+                        ),
                       ),
-                      IconButton(
-                        onPressed: () {},
-                        icon: Icon(Icons.star),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width * .5,
+                        child: IconButton(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                (MaterialPageRoute(builder: (context) {
+                                  return MapScreen();
+                                })));
+                          },
+                          icon: Icon(Icons.map),
+                        ),
+                      ),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width * .5,
+                        child: IconButton(
+                          onPressed: () {},
+                          icon: Icon(Icons.star),
+                        ),
+                      ),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width * .5,
+                        child: IconButton(
+                          onPressed: () {},
+                          icon: Icon(Icons.star),
+                        ),
                       ),
                     ],
                   ),
@@ -76,7 +104,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         // bottom app bar
-        bottomNavigationBar: BottomAppBar(
+        bottomNavigationBar:  BottomAppBar(
           shape: CircularNotchedRectangle(),
           notchMargin: 10,
           child: Container(
