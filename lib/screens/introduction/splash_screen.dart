@@ -1,8 +1,9 @@
 
 import 'package:flutter/material.dart';
-import 'package:internapp/widgets/custom_bottom_navigationbar.dart';
+import 'package:internapp/screens/introduction/onboarding_screen.dart';
+import 'package:internapp/screens/custom_bottom_navigationbar.dart';
 
-import '../utils/custom_color.dart';
+import '../../utils/custom_color.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -22,7 +23,7 @@ class _SplashScreenState extends State<SplashScreen> {
   _navigatetohome() async {
     await Future.delayed(Duration(milliseconds: 1600));
     Navigator.pushReplacement(context,
-        MaterialPageRoute(builder: (context) => CustomBottomNavigationBar()));
+        MaterialPageRoute(builder: (context) => OnBoardingScreen()));
   }
 
   @override
@@ -37,7 +38,7 @@ class _SplashScreenState extends State<SplashScreen> {
               Container(
                 alignment: Alignment.center,
                 child: Image.asset(
-                  'assets/images/splash.jpeg',
+                  'assets/images/logo.png',
                   fit: BoxFit.cover,
                 ),
               ),

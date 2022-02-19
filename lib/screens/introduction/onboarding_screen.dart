@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:internapp/authentication/screen/sign_in_screen.dart';
 import 'package:internapp/models/onboard_model.dart';
+
 import 'package:internapp/utils/custom_color.dart';
-import 'package:internapp/widgets/custom_bottom_navigationbar.dart';
+import 'package:internapp/screens/custom_bottom_navigationbar.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class OnBoardingScreen extends StatefulWidget {
@@ -46,10 +47,8 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
             TextButton(
               onPressed: () {
                 _storeOnboardInfo();
-                Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => LoginScreen()));
+                Navigator.pushReplacement(context,
+                    MaterialPageRoute(builder: (context) => LoginScreen()));
               },
               child: Text(
                 "Skip",
@@ -130,8 +129,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                         Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                                builder: (context) =>
-                                    LoginScreen()));
+                                builder: (context) => LoginScreen()));
                       }
 
                       _pageController.nextPage(

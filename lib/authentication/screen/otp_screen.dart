@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:internapp/screens/home_screen.dart';
-import 'package:internapp/widgets/custom_bottom_navigationbar.dart';
+import 'package:internapp/screens/custom_bottom_navigationbar.dart';
 import 'package:internapp/authentication/widget/otp_input_widget.dart';
 import 'package:internapp/widgets/size_config.dart';
 

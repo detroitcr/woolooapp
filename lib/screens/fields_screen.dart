@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:internapp/models/practice_model.dart';
+import 'package:internapp/models/fielddata/practice_model.dart';
 import 'package:internapp/widgets/custom_text_field.dart';
 import 'package:internapp/widgets/size_config.dart';
 

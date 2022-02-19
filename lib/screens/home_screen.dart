@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:internapp/models/Food/food_data.dart';
 import 'package:internapp/screens/map_screen.dart';
+import 'package:internapp/widgets/food_item_widget.dart';
+import 'package:internapp/widgets/restaurant_widget.dart';
 import 'package:internapp/widgets/second_list_viewwidget.dart';
 import 'package:internapp/widgets/size_config.dart';
 import 'package:internapp/widgets/text_widget.dart';
@@ -17,6 +20,7 @@ class AppHomeScreen extends StatefulWidget {
 class _AppHomeScreenState extends State<AppHomeScreen> {
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     SizeConfig().init(context);
     return SafeArea(
       child: Scaffold(
@@ -32,11 +36,19 @@ class _AppHomeScreenState extends State<AppHomeScreen> {
             ),
           ),
           title: MyText(
-            text: 'WELCOME TO COLLEGE MATE',
+            text: 'WELCOME TO DINEIN TASTE',
             size: 26,
             fontColor: Colors.black,
           ),
           actions: [
+            IconButton(
+              onPressed: () {},
+              icon: Icon(
+                Icons.qr_code,
+                color: Colors.grey.shade700,
+                size: 30,
+              ),
+            ),
             IconButton(
               onPressed: () {},
               icon: Icon(
@@ -56,52 +68,24 @@ class _AppHomeScreenState extends State<AppHomeScreen> {
                 height: SizeConfig.deviceHeight * 0.010,
               ),
               MyText(
-                text: 'Container Text',
+                text: 'Container Text edit karna hein',
                 size: 24,
               ),
-              SizedBox(
-                height:
-                    SizeConfig.deviceHeight * 0.010, // change size into small
-              ),
-              GestureDetector(
-                onTap: () {},
-                child: SecondListViewWidget(),
-              ),
+              itemList(size),
               SizedBox(
                 height:
                     SizeConfig.deviceHeight * 0.010, // change size into small
               ),
               MyText(
-                text: 'Container Text',
+                text: 'Curated Fine Dining for you!',
                 size: 24,
               ),
+              Restaurant(),
               SizedBox(
                 height: SizeConfig.deviceHeight * 0.010,
               ),
-              Stack(
-                alignment: Alignment.bottomRight,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      InkWell(
-                        onTap: () {
-                          print('qr code');
-                        },
-                        child: Container(
-                          height: SizeConfig.deviceHeight * 0.20,
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(10),
-                            child: Image.asset(
-                              'assets/images/qrcode.jpg',
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
+              SizedBox(
+                height: SizeConfig.deviceHeight * 0.010,
               ),
               MyText(
                 text: 'Container Text',

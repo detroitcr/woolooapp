@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:internapp/screens/home_screen.dart';
 import 'package:internapp/screens/menu_screen.dart';
-import 'package:internapp/screens/myaccount_screen.dart';
-import 'package:internapp/screens/refer_screen.dart';
-import 'package:internapp/widgets/custom_bottom_navigationbar.dart';
+
+import 'package:internapp/screens/custom_bottom_navigationbar.dart';
+import 'package:internapp/screens/profile/myaccount_screen.dart';
 
 import 'package:internapp/widgets/text_widget.dart';
 
@@ -20,13 +20,13 @@ class MapScreen extends StatefulWidget {
 class _MapScreenState extends State<MapScreen> {
   int currentTab = 0;
   final List<Widget> screens = [
+    MapScreen(),
     AppHomeScreen(),
-    MenuScreen(),
     MyAccountScreen(),
-    ReferScreen()
+    MenuScreen(),
   ];
 
-  Widget currentScreen = AppHomeScreen();
+  Widget currentScreen = MapScreen();
 
   //Completer<GoogleMapController> _controller = Completer();
   late GoogleMapController _controller;
@@ -45,202 +45,6 @@ class _MapScreenState extends State<MapScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.add),
-          onPressed: () {
-            showModalBottomSheet(
-              context: context,
-              builder: (BuildContext context) {
-                return Container(
-                  height: 200,
-                  child: Wrap(
-                    children: [
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width * .5,
-                        child: IconButton(
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                (MaterialPageRoute(builder: (context) {
-                                  return MapScreen();
-                                })));
-                          },
-                          icon: Icon(Icons.map),
-                        ),
-                      ),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width * .5,
-                        child: IconButton(
-                          onPressed: () {},
-                          icon: Icon(Icons.star),
-                        ),
-                      ),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width * .5,
-                        child: IconButton(
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                (MaterialPageRoute(builder: (context) {
-                                  return MapScreen();
-                                })));
-                          },
-                          icon: Icon(Icons.map),
-                        ),
-                      ),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width * .5,
-                        child: IconButton(
-                          onPressed: () {},
-                          icon: Icon(Icons.star),
-                        ),
-                      ),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width * .5,
-                        child: IconButton(
-                          onPressed: () {},
-                          icon: Icon(Icons.star),
-                        ),
-                      ),
-                    ],
-                  ),
-                );
-              },
-            );
-          },
-          backgroundColor: Colors.blue,
-        ),
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-        bottomNavigationBar: BottomAppBar(
-          shape: CircularNotchedRectangle(),
-          notchMargin: 10,
-          child: Container(
-            height: 60,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    MaterialButton(
-                      minWidth: 40,
-                      onPressed: () {
-                        setState(() {
-                          currentScreen =
-                              AppHomeScreen(); // if user taps on this dashboard tab will be active
-                          currentTab = 0;
-                        });
-                      },
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(
-                            Icons.home,
-                            color: currentTab == 0 ? Colors.blue : Colors.grey,
-                          ),
-                          Text(
-                            'Home',
-                            style: TextStyle(
-                              color:
-                                  currentTab == 0 ? Colors.blue : Colors.grey,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    MaterialButton(
-                      minWidth: 40,
-                      onPressed: () {
-                        setState(() {
-                          currentScreen =
-                              MenuScreen(); // if user taps on this dashboard tab will be active
-                          currentTab = 1;
-                        });
-                      },
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(
-                            Icons.person_add,
-                            color: currentTab == 1 ? Colors.blue : Colors.grey,
-                          ),
-                          Text(
-                            'Refer',
-                            style: TextStyle(
-                              color:
-                                  currentTab == 1 ? Colors.blue : Colors.grey,
-                            ),
-                          ),
-                        ],
-                      ),
-                    )
-                  ],
-                ),
-
-                // Right Tab bar icons
-
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    MaterialButton(
-                      minWidth: 40,
-                      onPressed: () {
-                        setState(() {
-                          currentScreen =
-                              MyAccountScreen(); // if user taps on this dashboard tab will be active
-                          currentTab = 2;
-                        });
-                      },
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(
-                            // this icon is not suitable
-                            Icons.account_box,
-                            color: currentTab == 2 ? Colors.blue : Colors.grey,
-                          ),
-                          Text(
-                            'My Account',
-                            style: TextStyle(
-                              color:
-                                  currentTab == 2 ? Colors.blue : Colors.grey,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    MaterialButton(
-                      minWidth: 40,
-                      onPressed: () {
-                        setState(() {
-                          currentScreen =
-                              ReferScreen(); // if user taps on this dashboard tab will be active
-                          currentTab = 3;
-                        });
-                      },
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Icon(
-                            Icons.menu,
-                            color: currentTab == 3 ? Colors.blue : Colors.grey,
-                          ),
-                          Text(
-                            'Menu',
-                            style: TextStyle(
-                              color:
-                                  currentTab == 3 ? Colors.blue : Colors.grey,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                )
-              ],
-            ),
-          ),
-        ),
         appBar: AppBar(
           elevation: 0,
           backgroundColor: Colors.transparent,

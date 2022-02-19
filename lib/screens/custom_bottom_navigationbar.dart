@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:internapp/screens/home_screen.dart';
 import 'package:internapp/screens/map_screen.dart';
 import 'package:internapp/screens/menu_screen.dart';
-import 'package:internapp/screens/myaccount_screen.dart';
-import 'package:internapp/screens/refer_screen.dart';
+import 'package:internapp/screens/profile/myaccount_screen.dart';
+import 'package:internapp/screens/profile/refer_screen.dart';
 
 class CustomBottomNavigationBar extends StatefulWidget {
   const CustomBottomNavigationBar({Key? key}) : super(key: key);
@@ -14,16 +14,15 @@ class CustomBottomNavigationBar extends StatefulWidget {
 }
 
 class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
-  
   int currentTab = 0;
   final List<Widget> screens = [
+    MapScreen(),
     AppHomeScreen(),
-    MenuScreen(),
     MyAccountScreen(),
     ReferScreen()
   ];
 
-  Widget currentScreen = AppHomeScreen();
+  Widget currentScreen = MapScreen();
 
   final PageStorageBucket bucket = PageStorageBucket();
 
@@ -37,74 +36,23 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
           child: currentScreen,
         ),
         backgroundColor: Colors.white,
+        // task complete but i dont know how to put image in floating action button
         floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.add),
+          
           onPressed: () {
-            showModalBottomSheet(
-              context: context,
-              builder: (BuildContext context) {
-                return Container(
-                  height: 200,
-                  child: Wrap(
-                    children: [
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width * .5,
-                        child: IconButton(
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                (MaterialPageRoute(builder: (context) {
-                                  return MapScreen();
-                                })));
-                          },
-                          icon: Icon(Icons.map),
-                        ),
-                      ),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width * .5,
-                        child: IconButton(
-                          onPressed: () {},
-                          icon: Icon(Icons.star),
-                        ),
-                      ),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width * .5,
-                        child: IconButton(
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                (MaterialPageRoute(builder: (context) {
-                                  return MapScreen();
-                                })));
-                          },
-                          icon: Icon(Icons.map),
-                        ),
-                      ),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width * .5,
-                        child: IconButton(
-                          onPressed: () {},
-                          icon: Icon(Icons.star),
-                        ),
-                      ),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width * .5,
-                        child: IconButton(
-                          onPressed: () {},
-                          icon: Icon(Icons.star),
-                        ),
-                      ),
-                    ],
-                  ),
-                );
-              },
+            print(
+              'qr code',
             );
           },
-          backgroundColor: Colors.blue,
+          child: Icon(
+            Icons.qr_code,
+            size: 26,
+          ),
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+
         // bottom app bar
-        bottomNavigationBar:  BottomAppBar(
+        bottomNavigationBar: BottomAppBar(
           shape: CircularNotchedRectangle(),
           notchMargin: 10,
           child: Container(

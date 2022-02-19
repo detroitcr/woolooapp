@@ -16,7 +16,7 @@ List<DummyData> dummyData = [
   DummyData(
     name: 'Text',
     image: 'assets/images/college.jpg',
-  ),
+ ),
   DummyData(
     name: 'Text',
     image: 'assets/images/college.jpg',
