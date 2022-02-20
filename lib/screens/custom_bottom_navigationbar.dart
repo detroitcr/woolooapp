@@ -4,6 +4,7 @@ import 'package:internapp/screens/map_screen.dart';
 import 'package:internapp/screens/menu_screen.dart';
 import 'package:internapp/screens/profile/myaccount_screen.dart';
 import 'package:internapp/screens/profile/refer_screen.dart';
+import 'package:internapp/screens/qr_code/qr_code.dart';
 
 class CustomBottomNavigationBar extends StatefulWidget {
   const CustomBottomNavigationBar({Key? key}) : super(key: key);
@@ -38,11 +39,10 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
         backgroundColor: Colors.white,
         // task complete but i dont know how to put image in floating action button
         floatingActionButton: FloatingActionButton(
-          
           onPressed: () {
-            print(
-              'qr code',
-            );
+            Navigator.push(context, MaterialPageRoute(builder: (context) {
+              return QrCodeScan();
+            }));
           },
           child: Icon(
             Icons.qr_code,

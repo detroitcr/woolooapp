@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-
 import 'package:internapp/screens/home_screen.dart';
-
-
-
+import 'package:internapp/screens/introduction/onboarding_screen.dart';
+import 'package:internapp/screens/qr_code/qr_code.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -13,7 +11,7 @@ class MyApp extends StatelessWidget {
       title: 'DineInApp',
       debugShowCheckedModeBanner: false,
      
-       home: AppHomeScreen(),
+     home: OnBoardingScreen(),
     );
   }
 }

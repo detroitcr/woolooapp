@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:internapp/models/Restaurant/restaurant_data.dart';
 import 'package:internapp/screens/foodmenu_screen.dart';
+import 'package:internapp/screens/qr_code/qr_code.dart';
 import 'package:internapp/widgets/food_list_view_widget.dart';
 import 'package:internapp/widgets/text_widget.dart';
 
@@ -23,7 +24,12 @@ class _TabBarWidgetState extends State<TabBarWidget> {
           fontColor: Colors.black,
           size: 30,
         ),
-        leading: BackButton(color: Colors.black),
+        leading: BackButton(
+          color: Colors.black,
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
         backgroundColor: Colors.white,
         actions: [
           IconButton(
@@ -41,7 +47,11 @@ class _TabBarWidgetState extends State<TabBarWidget> {
             ),
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder:(context){
+                return QrCodeScan();
+              }));
+            },
             icon: Icon(
               Icons.qr_code,
               color: Colors.black,
@@ -91,7 +101,6 @@ class _TabBarWidgetState extends State<TabBarWidget> {
           child: Image.asset(data.image),
         ),
         Text(data.name),
-        Text(data.categories),
         Text(data.location),
         Text(data.distance),
         Text(data.timing),

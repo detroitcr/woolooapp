@@ -7,6 +7,7 @@ import 'package:internapp/screens/menu_screen.dart';
 
 import 'package:internapp/screens/custom_bottom_navigationbar.dart';
 import 'package:internapp/screens/profile/myaccount_screen.dart';
+import 'package:internapp/screens/qr_code/qr_code.dart';
 
 import 'package:internapp/widgets/text_widget.dart';
 
@@ -59,7 +60,7 @@ class _MapScreenState extends State<MapScreen> {
               },
               child: CircleAvatar(
                 radius: 2,
-                backgroundImage: AssetImage('assets/images/amazon.jpg'),
+                backgroundImage: AssetImage('assets/images/logo.png'),
               ),
             ),
           ),
@@ -75,7 +76,11 @@ class _MapScreenState extends State<MapScreen> {
               icon: Icon(Icons.search),
             ),
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return QrCodeScan();
+                }));
+              },
               icon: Icon(Icons.qr_code),
               color: Colors.black,
             ),

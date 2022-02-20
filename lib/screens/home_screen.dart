@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:internapp/models/Food/food_data.dart';
 import 'package:internapp/screens/map_screen.dart';
+import 'package:internapp/screens/qr_code/qr_code.dart';
 import 'package:internapp/widgets/food_item_widget.dart';
 import 'package:internapp/widgets/restaurant_widget.dart';
 import 'package:internapp/widgets/second_list_viewwidget.dart';
@@ -42,7 +43,11 @@ class _AppHomeScreenState extends State<AppHomeScreen> {
           ),
           actions: [
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return QrCodeScan();
+                }));
+              },
               icon: Icon(
                 Icons.qr_code,
                 color: Colors.grey.shade700,
@@ -80,7 +85,6 @@ class _AppHomeScreenState extends State<AppHomeScreen> {
                 text: 'Curated Fine Dining for you!',
                 size: 24,
               ),
-              
               Restaurant(),
               SizedBox(
                 height: SizeConfig.deviceHeight * 0.010,
