@@ -1,11 +1,14 @@
 class RestaurantData {
   final String name;
+  final String categories;
+
   final String image;
   final String location;
   final String distance;
   final String timing;
 
   RestaurantData({
+    required this.categories,
     required this.name,
     required this.image,
     required this.location,
@@ -21,6 +24,7 @@ List<RestaurantData> restaurantdata = [
     location: 'CP',
     distance: '3 km',
     timing: '8:00 A.M to 8 :00 P.M',
+    categories: 'Western',
   ),
   RestaurantData(
     name: 'CoolCafe',
@@ -28,6 +32,7 @@ List<RestaurantData> restaurantdata = [
     location: 'NSP',
     distance: '3 km',
     timing: '8:00 A.M to 8 :00 P.M',
+    categories: 'Western',
   ),
   RestaurantData(
     name: 'Proud',
@@ -35,6 +40,7 @@ List<RestaurantData> restaurantdata = [
     location: 'Saket',
     distance: '3 km',
     timing: '8:00 A.M to 8 :00 P.M',
+    categories: 'Italian',
   ),
   RestaurantData(
     name: 'Life',
@@ -42,5 +48,6 @@ List<RestaurantData> restaurantdata = [
     location: 'Chanakyapuri',
     distance: '3 km',
     timing: '8:00 A.M to 8 :00 P.M',
+    categories: 'Italian',
   ),
 ];

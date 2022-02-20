@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:internapp/models/Restaurant/restaurant_data.dart';
 import 'package:internapp/widgets/restaurant_card_widget.dart';
+import 'package:internapp/widgets/tab_bar_widget.dart';
 
 // Home screen Restaurant list view
 class Restaurant extends StatelessWidget {
@@ -8,24 +9,26 @@ class Restaurant extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        print('restaurant');
+    return SizedBox(
+      height: 100,
+      child: ListView.builder(
+        shrinkWrap: true,
+        scrollDirection: Axis.horizontal,
+        itemCount: restaurantdata.length,
+        itemBuilder: (context, index) {
+          return GestureDetector(
+             onTap: () {
+        Navigator.push(context, MaterialPageRoute(builder: (context) {
+          return TabBarWidget( data: restaurantdata[index]);
+        }));
       },
-      child: SizedBox(
-        height: 100,
-        child: ListView.builder(
-          shrinkWrap: true,
-          scrollDirection: Axis.horizontal,
-          itemCount: restaurantdata.length,
-          itemBuilder: (context, index) {
-            return RestaurantCard(
+            child: RestaurantCard(
               image: restaurantdata[index].image,
               name: restaurantdata[index].name,
               location: restaurantdata[index].location,
-            );
-          },
-        ),
+            ),
+          );
+        },
       ),
     );
   }

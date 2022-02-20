@@ -32,7 +32,7 @@ class _AppHomeScreenState extends State<AppHomeScreen> {
             padding: EdgeInsets.all(8.0),
             child: CircleAvatar(
               radius: 2,
-              backgroundImage: AssetImage('assets/images/amazon.jpg'),
+              backgroundImage: AssetImage('assets/images/logo.png'),
             ),
           ),
           title: MyText(
@@ -68,7 +68,7 @@ class _AppHomeScreenState extends State<AppHomeScreen> {
                 height: SizeConfig.deviceHeight * 0.010,
               ),
               MyText(
-                text: 'Container Text edit karna hein',
+                text: 'Categories',
                 size: 24,
               ),
               itemList(size),
@@ -80,6 +80,7 @@ class _AppHomeScreenState extends State<AppHomeScreen> {
                 text: 'Curated Fine Dining for you!',
                 size: 24,
               ),
+              
               Restaurant(),
               SizedBox(
                 height: SizeConfig.deviceHeight * 0.010,
