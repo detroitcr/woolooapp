@@ -7,7 +7,8 @@ import 'package:internapp/screens/menu_screen.dart';
 
 import 'package:internapp/screens/custom_bottom_navigationbar.dart';
 import 'package:internapp/screens/profile/myaccount_screen.dart';
-import 'package:internapp/screens/qr_code/qr_code.dart';
+import 'package:internapp/screens/qr_code.dart';
+
 
 import 'package:internapp/widgets/text_widget.dart';
 

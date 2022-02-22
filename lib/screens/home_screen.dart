@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:internapp/models/Food/food_data.dart';
 import 'package:internapp/screens/map_screen.dart';
-import 'package:internapp/screens/qr_code/qr_code.dart';
+import 'package:internapp/screens/qr_code.dart';
+
 import 'package:internapp/widgets/food_item_widget.dart';
 import 'package:internapp/widgets/restaurant_widget.dart';
 import 'package:internapp/widgets/second_list_viewwidget.dart';

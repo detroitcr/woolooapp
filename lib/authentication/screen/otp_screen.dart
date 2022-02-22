@@ -28,9 +28,9 @@ class _OTPSCREENState extends State<OTPSCREEN> {
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text('Phone Number Verification'),
-          SizedBox(
+        children:  [
+         const Text('Phone Number Verification'),
+        const  SizedBox(
             height: 30,
           ),
           // Implement 4 input fields
@@ -55,28 +55,28 @@ class _OTPSCREENState extends State<OTPSCREEN> {
               ),
             ],
           ),
-          SizedBox(
+        const  SizedBox(
             height: 30,
           ),
           //Display the entered code
           Text(
             _otp ?? 'Please Enter OTP',
-            style: TextStyle(fontSize: 20),
+            style: const TextStyle(fontSize: 20),
           ),
-          Divider(),
+         const Divider(),
           InkWell(
             onTap: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return CustomBottomNavigationBar();
+                return const CustomBottomNavigationBar();
               }));
             },
             child: Container(
-              child: Text(
+              child:const Text(
                 'Submit',
                 style: TextStyle(color: Colors.white),
               ),
               width: double.infinity,
-              padding: EdgeInsets.symmetric(vertical: 12),
+              padding: const EdgeInsets.symmetric(vertical: 12),
               alignment: Alignment.center,
               decoration: ShapeDecoration(
                 color: activeColor,

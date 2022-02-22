@@ -311,3 +311,17 @@ class _TabBarWidgetState extends State<TabBarWidget> {
     );
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+// i want to my customnavigation bar convert into persistent navigation bar
+

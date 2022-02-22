@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:internapp/models/Restaurant/restaurant_data.dart';
 import 'package:internapp/screens/foodmenu_screen.dart';
-import 'package:internapp/screens/qr_code/qr_code.dart';
+import 'package:internapp/screens/qr_code.dart';
+
 import 'package:internapp/widgets/food_list_view_widget.dart';
 import 'package:internapp/widgets/text_widget.dart';
 
@@ -48,7 +49,7 @@ class _TabBarWidgetState extends State<TabBarWidget> {
           ),
           IconButton(
             onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder:(context){
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
                 return QrCodeScan();
               }));
             },

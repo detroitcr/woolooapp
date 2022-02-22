@@ -75,24 +75,42 @@ class _QrCodeScanState extends State<QrCodeScan> {
     setState(() {
       this.controller = controller;
     });
-    controller.scannedDataStream.listen((scanData) {
-      setState(() {
-        result = scanData;
-        Navigator.push(context, MaterialPageRoute(builder: (context) {
-          return TabBarWidget(
-            //test code
-            data: RestaurantData(
-              name: 'Stanza',
-              image: 'assets/images/restaurant1.jpg',
-              location: 'CP',
-              distance: '3 km',
-              timing: '8:00 A.M to 8 :00 P.M',
-              categories: 'Western',
-            ),
-          );
-        }));
-      });
-    });
+
+
+if(this.controller !=null){
+Navigator.push(context, MaterialPageRoute(builder: (context) {
+      return TabBarWidget(
+        //test code
+        data: RestaurantData(
+          name: 'Stanza',
+          image: 'assets/images/restaurant1.jpg',
+          location: 'CP',
+          distance: '3 km',
+          timing: '8:00 A.M to 8 :00 P.M',
+          categories: 'Western',
+        ),
+      );
+    }));
+}
+    
+    // controller.scannedDataStream.listen((scanData) {
+    //   setState(() {
+    //     result = scanData;
+    //     Navigator.push(context, MaterialPageRoute(builder: (context) {
+    //       return TabBarWidget(
+    //         //test code
+    //         data: RestaurantData(
+    //           name: 'Stanza',
+    //           image: 'assets/images/restaurant1.jpg',
+    //           location: 'CP',
+    //           distance: '3 km',
+    //           timing: '8:00 A.M to 8 :00 P.M',
+    //           categories: 'Western',
+    //         ),
+    //       );
+    //     }));
+    //   });
+    // });
   }
 
   void _onPermissionSet(BuildContext context, QRViewController ctrl, bool p) {

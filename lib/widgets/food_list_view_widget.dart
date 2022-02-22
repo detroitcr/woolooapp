@@ -10,6 +10,15 @@ class FoodListView extends StatefulWidget {
 }
 
 class _FoodListViewState extends State<FoodListView> {
+  int count = 0;
+  void increament() {
+    count++;
+  }
+
+  void decreament() {
+    count--;
+  }
+
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -103,15 +112,34 @@ class _FoodListViewState extends State<FoodListView> {
                         Container(
                           height: 24,
                           width: 90,
-                          decoration: BoxDecoration(
-                              border: Border.all(color: Colors.red),
-                              borderRadius: BorderRadius.circular(5)),
+                          // decoration: BoxDecoration(
+                          //   border: Border.all(
+                          //     color: Colors.red,
+                          //   ),
+                          //   borderRadius: BorderRadius.circular(5),
+                          // ),
                           child: Center(
-                            child: MyText(
-                              text: 'ADD +'.toUpperCase(),
-                              fontColor: Colors.red,
-                              size: 18,
+                            child: TextButton(
+                              onPressed: () {
+                                setState(() {
+                                  increament();
+                                });
+                              },
+                              child: Text(
+                                count.toString(),
+                                style: TextStyle(
+                                  color: Colors.red,
+                                  fontSize: 10,
+                                ),
+                              ),
                             ),
+                            // child:
+
+                            // MyText(
+                            //   text: 'ADD +'.toUpperCase(),
+                            //   fontColor: Colors.red,
+                            //   size: 18,
+                            // ),
                           ),
                         ),
                       ],
@@ -126,3 +154,167 @@ class _FoodListViewState extends State<FoodListView> {
     );
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// MaterialButton(
+//               child: Text(
+//                 count.toString(),
+//                 style: TextStyle(fontSize: 30),
+//               ),
+//               onPressed: () {
+//                 setState(() {
+//                   increament();
+//                 });
+//               },
+//             ),
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// _itemCount!=0? new  IconButton(icon: new Icon(Icons.remove),onPressed: ()=>setState(()=>_itemCount--),):new Container(),
+//             new Text(_itemCount.toString()),
+//             new IconButton(icon: new Icon(Icons.add),onPressed: ()=>setState(()=>_itemCount++))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// /////            Container(
+//                   padding: EdgeInsets.all(3),
+//                   decoration: BoxDecoration(
+//                       borderRadius: BorderRadius.circular(5),
+//                       color: Theme.of(context).accentColor),
+//                   child: Row(
+//                     children: [
+//                       InkWell(
+//                           onTap: () {},
+//                           child: Icon(
+//                             Icons.remove,
+//                             color: Colors.white,
+//                             size: 16,
+//                           )),
+//  Container(
+//                         margin: EdgeInsets.symmetric(horizontal: 3),
+//                         padding:
+//                             EdgeInsets.symmetric(horizontal: 3, vertical: 2),
+//                         decoration: BoxDecoration(
+//                             borderRadius: BorderRadius.circular(3),
+//                             color: Colors.white),
+//                         child: Text(
+//                           '3',
+//                           style: TextStyle(color: Colors.black, fontSize: 16),
+//                         ),
+//                       ),
+
+  // InkWell(
+  //                         onTap: () {},
+  //                         child: Icon(
+  //                           Icons.add,
+  //                           color: Colors.white,
+  //                           size: 16,
+  //                         )),
+  //                   ],
+  //                 ),
+  //               ),
+

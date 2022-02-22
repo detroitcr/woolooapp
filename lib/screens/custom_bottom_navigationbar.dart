@@ -4,7 +4,8 @@ import 'package:internapp/screens/map_screen.dart';
 import 'package:internapp/screens/menu_screen.dart';
 import 'package:internapp/screens/profile/myaccount_screen.dart';
 import 'package:internapp/screens/profile/refer_screen.dart';
-import 'package:internapp/screens/qr_code/qr_code.dart';
+import 'package:internapp/screens/qr_code.dart';
+
 
 class CustomBottomNavigationBar extends StatefulWidget {
   const CustomBottomNavigationBar({Key? key}) : super(key: key);

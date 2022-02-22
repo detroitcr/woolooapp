@@ -4,7 +4,6 @@ import 'package:internapp/authentication/screen/otp_screen.dart';
 import 'package:internapp/utils/custom_color.dart';
 import 'package:internapp/widgets/custom_text_field.dart';
 import 'package:internapp/widgets/size_config.dart';
-import 'package:internapp/widgets/text_widget.dart';
 
 class LoginScreen extends StatefulWidget {
   LoginScreen({
@@ -31,21 +30,18 @@ class _LoginScreenState extends State<LoginScreen> {
       resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 34),
+          padding: const EdgeInsets.symmetric(horizontal: 34),
           width: double.infinity,
           child: Column(
             // centered like horizontal direction x axis
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SizedBox(
-                height: 150,
+              const SizedBox(
+                height: 20,
               ),
+              Image.asset('assets/images/logo.png'),
               // svg image
-              SvgPicture.asset(
-                'assets/images/logo.svg',
-                color: Colors.black,
-                height: 64,
-              ),
+
               SizedBox(height: SizeConfig.deviceHeight * 0.0654),
               // textfield input email
               CustomTextField(
@@ -53,25 +49,25 @@ class _LoginScreenState extends State<LoginScreen> {
                 textEditingController: _mobilenumbercontroller,
                 textInputType: TextInputType.phone,
                 hintText: 'Mobile Number',
-                icon: Icon(Icons.phone),
+                icon: const Icon(Icons.phone),
               ),
               SizedBox(height: SizeConfig.deviceHeight * 0.032),
               // textfield input password
-              Divider(),
+              const Divider(),
               // button login
               InkWell(
                 onTap: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return OTPSCREEN();
+                    return const OTPSCREEN();
                   }));
                 },
                 child: Container(
-                  child: Text(
+                  child: const Text(
                     'Submit',
                     style: TextStyle(color: Colors.white),
                   ),
                   width: double.infinity,
-                  padding: EdgeInsets.symmetric(vertical: 12),
+                  padding: const EdgeInsets.symmetric(vertical: 12),
                   alignment: Alignment.center,
                   decoration: ShapeDecoration(
                     color: activeColor,
