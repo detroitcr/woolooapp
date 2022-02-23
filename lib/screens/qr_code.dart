@@ -20,6 +20,7 @@ class _QrCodeScanState extends State<QrCodeScan> {
   Barcode? result;
   QRViewController? controller;
   final GlobalKey qrKey = GlobalKey(debugLabel: 'QR');
+  int isScreenPushed = 0;
 
   // In order to get hot reload to work we need to pause the camera if the platform
   // is android, or resume the camera if the platform is iOS.
@@ -76,41 +77,27 @@ class _QrCodeScanState extends State<QrCodeScan> {
       this.controller = controller;
     });
 
-
-if(this.controller !=null){
-Navigator.push(context, MaterialPageRoute(builder: (context) {
-      return TabBarWidget(
-        //test code
-        data: RestaurantData(
-          name: 'Stanza',
-          image: 'assets/images/restaurant1.jpg',
-          location: 'CP',
-          distance: '3 km',
-          timing: '8:00 A.M to 8 :00 P.M',
-          categories: 'Western',
-        ),
-      );
-    }));
-}
-    
-    // controller.scannedDataStream.listen((scanData) {
-    //   setState(() {
-    //     result = scanData;
-    //     Navigator.push(context, MaterialPageRoute(builder: (context) {
-    //       return TabBarWidget(
-    //         //test code
-    //         data: RestaurantData(
-    //           name: 'Stanza',
-    //           image: 'assets/images/restaurant1.jpg',
-    //           location: 'CP',
-    //           distance: '3 km',
-    //           timing: '8:00 A.M to 8 :00 P.M',
-    //           categories: 'Western',
-    //         ),
-    //       );
-    //     }));
-    //   });
-    // });
+    controller.scannedDataStream.listen((scanData) {
+      setState(() {
+        result = scanData;
+        if (isScreenPushed == 0) {
+          Navigator.push(context, MaterialPageRoute(builder: (context) {
+            return TabBarWidget(
+              //test code
+              data: RestaurantData(
+                name: 'Stanza',
+                image: 'assets/images/restaurant1.jpg',
+                location: 'CP',
+                distance: '3 km',
+                timing: '8:00 A.M to 8 :00 P.M',
+                categories: 'Western',
+              ),
+            );
+          })).then((value) => isScreenPushed = 0);
+        }
+        isScreenPushed += 1;
+      });
+    });
   }
 
   void _onPermissionSet(BuildContext context, QRViewController ctrl, bool p) {
